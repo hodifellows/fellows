@@ -55,8 +55,11 @@ A profile is published only when its file says `consent: true`, which the fellow
 
 The main website (`SBusienei/hodi-fellows-site`) builds this repo into `/fellows` when it deploys. It rebuilds daily on its own. To make it update right after each merge:
 
-1. Create a **fine-grained personal access token** (GitHub → Settings → Developer settings) with access to `SBusienei/hodi-fellows-site` only and **Contents: Read and write** permission.
-2. In this repo, go to **Settings → Secrets and variables → Actions** and add it as `SITE_DISPATCH_TOKEN`.
+1. In this repo, go to **Settings → Environments → New environment**, name it `site-update`, and under **Deployment branches and tags** allow only `main`. This stops branches (which fellows can push) from reading the secret.
+2. Create a **fine-grained personal access token** (GitHub → Settings → Developer settings) with access to `SBusienei/hodi-fellows-site` only and **Contents: Read and write** permission, and a short expiry.
+3. In the `site-update` environment, add it as the secret `SITE_DISPATCH_TOKEN`.
+
+Never add this token as a plain repository secret: anyone with write access could read it from a branch.
 
 The **Update hodifellows.com** workflow then asks the website to rebuild after every merge.
 

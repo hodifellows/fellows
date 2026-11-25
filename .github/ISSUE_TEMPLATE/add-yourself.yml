@@ -1,7 +1,7 @@
 name: Add myself to the fellows page
 description: Your first contribution. One per fellow.
 title: "Add <your name> to the fellows page"
-labels: ["add-yourself", "good first issue", "week-1"]
+labels: ["add-yourself", "good first issue", "step-1"]
 body:
   - type: markdown
     attributes:

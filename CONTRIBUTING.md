@@ -39,7 +39,7 @@ Thanks for building this with us. Every change, big or small, goes through the s
 
 ## Picking up other issues
 
-- Look for the labels **`good first issue`** (easier) and **`stretch`** (harder). Each week's issues are in a milestone (Week 1 to Week 6).
+- Look for the labels **`good first issue`** (easier) and **`stretch`** (harder). Issues are grouped into steps (Step 1 to Step 6): finish one step's issues before moving to the next.
 - **Comment "I'd like to take this"** and wait to be assigned. One person per issue.
 - **Keep pull requests small:** one issue per pull request.
 - Stuck for more than an hour? Comment on the issue with what you tried. Asking is part of the work.
