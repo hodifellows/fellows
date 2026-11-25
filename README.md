@@ -1,6 +1,6 @@
 # Hodi Fellows: the fellows page
 
-The page at **[hodifellows.com/fellows](https://hodifellows.com/fellows/)**, built by the fellows themselves.
+This is a page that will be in the main site to display fellows who have participated in the program.
 
 Each fellow adds one small file about themselves. A Python script turns those files into a page of photos; selecting a photo opens a card with the fellow's bio, languages, links and, when they finish, a testimonial.
 
