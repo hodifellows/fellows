@@ -1,0 +1,18 @@
+# Copy this file to fellows/<your-github-username>.yaml (all lowercase)
+# and fill it in. Files starting with "_" are never published.
+# Tip: `python scripts/add_fellow.py <your-github-username>` fills most of it for you.
+
+github: your-github-username   # required
+name: Your Name                # required, as you want it shown
+cohort: Cohort 1 (2027)        # required
+bio: >-                        # required, 1-2 sentences about you
+  Second-year computer science student who likes building small tools
+  and learning in public.
+photo: your-github-username.jpg   # optional: put the file in photos/
+languages: [Python, JavaScript]   # optional
+links:                            # optional, each must start with https://
+  portfolio: https://your-github-username.github.io
+  linkedin: https://www.linkedin.com/in/your-name
+testimonial: >-                   # optional: add this when you finish
+  A sentence in your own words about the programme.
+consent: false   # change to true to agree to your profile being public on hodifellows.com/fellows
