@@ -1,8 +1,22 @@
+<!--
+How to fill this in: write your answers under each heading and tick boxes by
+changing [ ] to [x]. Delete any section that doesn't apply.
+Text between these arrows is a hint and won't show once you open the pull request.
+-->
+
 ## What does this change?
 
-<!-- One or two sentences. -->
+<!-- One or two sentences. Then put the issue number after "Closes #" so the issue closes when this is merged. -->
 
 Closes #
+
+## Type of change
+
+- [ ] Adding or updating my profile
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Docs
+- [ ] Tests
 
 ## How did you do it? (in your own words)
 
@@ -16,3 +30,4 @@ Closes #
 ## If you're adding or changing your own profile
 
 - [ ] I agree to my profile being public on hodifellows.com/fellows (and I've set `consent: true`)
+
