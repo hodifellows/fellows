@@ -1,0 +1,22 @@
+name: Add myself to the fellows page
+description: Your first contribution. One per fellow.
+title: "Add <your name> to the fellows page"
+labels: ["add-yourself", "good first issue", "week-1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Follow **CONTRIBUTING.md → Your first pull request**. Open this issue, then open a pull request that adds `fellows/<your-github-username>.yaml`.
+  - type: input
+    id: username
+    attributes:
+      label: Your GitHub username
+    validations:
+      required: true
+  - type: checkboxes
+    id: steps
+    attributes:
+      label: Before you start
+      options:
+        - label: I have read CONTRIBUTING.md
+          required: true

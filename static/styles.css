@@ -1,0 +1,177 @@
+/* Hodi Fellows: fellows page. Colours and fonts match hodifellows.com.
+   Fonts load from the main site; when previewing locally, system fonts are used. */
+
+@font-face {
+  font-family: Nunito;
+  src: url("/assets/fonts/nunito-latin.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/assets/fonts/lato-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/assets/fonts/lato-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --sky: #dcebff;
+  --sky-soft: #eef4ff;
+  --page: #f7f9fc;
+  --ink: #13213d;
+  --muted: #4a5568;
+  --blue: #2f6fdb;
+  --saffron: #f2a93b;
+  --saffron-soft: #fdf1dc;
+  --saffron-text: #8a5300;
+  --line: #dce5f2;
+  --heading: Nunito, system-ui, sans-serif;
+  --body: Lato, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: var(--blue); }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+.container { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+.site-header { background: var(--sky); }
+.nav { display: flex; align-items: center; min-height: 76px; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+h1, h2 { font-family: var(--heading); line-height: 1.15; }
+h1 { font-size: clamp(34px, 6vw, 48px); margin: 48px 0 8px; }
+.intro { color: var(--muted); margin: 0 0 32px; max-width: 60ch; }
+
+.fellow-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.fellow-tile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 24px 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.fellow-tile:hover { border-color: #b9cbe6; box-shadow: 0 6px 18px rgba(19, 33, 61, 0.08); }
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--sky-soft);
+  margin-bottom: 10px;
+}
+.avatar.small { width: 72px; height: 72px; margin: 0; flex-shrink: 0; }
+.initials {
+  display: grid;
+  place-items: center;
+  background: var(--saffron-soft);
+  color: var(--saffron-text);
+  font-family: var(--heading);
+  font-size: 36px;
+  font-weight: 800;
+}
+.avatar.small.initials { font-size: 26px; }
+
+.tile-name { font-family: var(--heading); font-weight: 800; font-size: 19px; text-align: center; }
+.tile-cohort { color: var(--saffron-text); font-size: 14px; font-weight: 700; margin: 0; }
+
+.fellow-card {
+  width: min(520px, 100% - 32px);
+  border: 0;
+  border-radius: 20px;
+  padding: 28px;
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(19, 33, 61, 0.25);
+}
+.fellow-card::backdrop { background: rgba(19, 33, 61, 0.45); }
+.card-head { display: flex; align-items: center; gap: 16px; }
+.card-head h2 { margin: 0; font-size: 26px; }
+.close {
+  margin-left: auto;
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--sky-soft);
+  color: var(--ink);
+  cursor: pointer;
+}
+.bio { margin: 20px 0 0; }
+
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; }
+.chips li {
+  background: var(--sky-soft);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.quote {
+  margin: 20px 0 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--saffron);
+  color: var(--muted);
+}
+.quote p { margin: 0; }
+
+.links { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 20px 0 0; padding: 0; }
+.links a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+
+.notice {
+  background: var(--saffron-soft);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.footer { margin-top: 64px; padding: 24px 0 40px; border-top: 1px solid var(--line); font-size: 15px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fellow-tile { transition: none; }
+}

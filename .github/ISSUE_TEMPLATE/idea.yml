@@ -1,0 +1,14 @@
+name: Idea or improvement
+description: Suggest something new for the fellows page
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to add or change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?

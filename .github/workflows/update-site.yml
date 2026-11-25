@@ -1,0 +1,32 @@
+name: Update hodifellows.com
+
+# After a change is merged, ask the main website to rebuild so
+# hodifellows.com/fellows shows it. Needs the SITE_DISPATCH_TOKEN secret
+# (see README). Without it, the website still picks up changes on its
+# daily rebuild.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+    steps:
+      - name: Ask the website to rebuild
+        if: env.TOKEN != ''
+        run: |
+          curl --fail -sS -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/SBusienei/hodi-fellows-site/dispatches \
+            -d '{"event_type":"fellows-updated"}'
+      - name: No token set
+        if: env.TOKEN == ''
+        run: echo "SITE_DISPATCH_TOKEN is not set; the website will update on its daily rebuild."
