@@ -1,7 +1,8 @@
 name: Update hodifellows.com
 
 # After a change is merged, ask the main website to rebuild so
-# hodifellows.com/fellows shows it. Needs the SITE_DISPATCH_TOKEN secret
+# hodifellows.com/fellows shows it. Needs the SITE_DISPATCH_TOKEN secret,
+# stored in the "site-update" environment so only main can use it
 # (see README). Without it, the website still picks up changes on its
 # daily rebuild.
 
@@ -16,6 +17,7 @@ permissions:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    environment: site-update
     env:
       TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
     steps:
